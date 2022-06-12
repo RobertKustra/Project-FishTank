@@ -1,22 +1,30 @@
 ﻿using FishTank.Domain.Common;
+using FishTank.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace FishTank.Persistance
 {
-    public  class FishDbContext : DbContext
+    public class FishDbContext : DbContext
     {
-        public FishDbContext(DbContextOptions<FishDbContext> options):base(options)
+        public FishDbContext(DbContextOptions<FishDbContext> options) : base(options)
         {
 
         }
 
+        public DbSet<Fish> Fish { get; set; }
+        public DbSet<EatingsHabits> EatingsHabits { get; set; }
+        public DbSet<LivingEnvironments> LivingEnvironments { get; set; }
+
         protected override void OnModelCreating (ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+            modelBuilder.SeedDate();
 
         }
 

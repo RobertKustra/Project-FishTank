@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace FishTank.Domain.Entities
 {
-    public class EatingsHabit
+    public class EatingsHabits
     {
         public int Id { get; set; }
         public string Name { get; set; }

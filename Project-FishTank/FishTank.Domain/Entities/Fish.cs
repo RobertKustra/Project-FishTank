@@ -13,7 +13,7 @@ namespace FishTank.Domain.Entities
     {
        
         public FishName FishName { get; set; }
-        public ICollection<EatingsHabit> EatingsHabits { get; private set; } 
-        public LivingEnvironment LivingEnvironment { get; set; }
+        public ICollection<EatingsHabits> EatingsHabits { get; private set; } 
+        public LivingEnvironments LivingEnvironment { get; set; }
     }
 }
