@@ -23,6 +23,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FishTank.Application\FishTank.Application.csproj" />
     <ProjectReference Include="..\FishTank.Domain\FishTank.Domain.csproj" />
   </ItemGroup>
 

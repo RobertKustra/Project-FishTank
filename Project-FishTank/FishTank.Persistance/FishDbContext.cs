@@ -20,6 +20,10 @@ namespace FishTank.Persistance
             _datetime = dateTime;
         }
 
+        public FishDbContext(DbContextOptions options) : base(options)
+        {
+        }
+
         public DbSet<Fish> Fish { get; set; }
         public DbSet<EatingsHabits> EatingsHabits { get; set; }
         public DbSet<LivingEnvironments> LivingEnvironments { get; set; }
@@ -27,7 +31,7 @@ namespace FishTank.Persistance
         protected override void OnModelCreating (ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
-            modelBuilder.SeedDate();
+            modelBuilder.SeedData();
 
         }
 

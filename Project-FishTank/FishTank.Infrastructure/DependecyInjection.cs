@@ -1,4 +1,5 @@
 ﻿using FishTank.Application.Common.Interfaces;
+using FishTank.Infrastructure.FileStore;
 using FishTank.Infrastructure.Services;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -15,6 +16,8 @@ namespace FishTank.Infrastructure
         public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddTransient<IDateTime, DateTimeService>();
+            services.AddTransient<IFileStore, FileStore.FileStore>();
+            services.AddTransient<IDirectoryWrapper, DirectoryWrapper>();
             return services;
         }
     }

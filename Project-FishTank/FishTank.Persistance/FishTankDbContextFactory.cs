@@ -9,6 +9,7 @@ namespace FishTank.Persistance
 {
     public class FishTankDbContextFactory : DesignTimeDbContextFactoryBase<FishDbContext>
     {
+
         protected override FishDbContext CreateNewInstance(DbContextOptions<FishDbContext> options)
         {
             return new FishDbContext(options);

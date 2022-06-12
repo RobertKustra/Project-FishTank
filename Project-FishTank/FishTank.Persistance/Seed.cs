@@ -10,10 +10,8 @@ namespace FishTank.Persistance
 {
     public static class Seed
     {
-        public static void SeedDate(this ModelBuilder modelBuilder)
+        public static void SeedData(this ModelBuilder modelBuilder)
         {
-
-
             modelBuilder.Entity<LivingEnvironments>(l =>
             {
                 l.HasData(new LivingEnvironments()
